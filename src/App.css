@@ -8,7 +8,7 @@ body {
     display: flex;
 }
 
-/* SIDEBAR */
+
 .sidebar {
     width: 80px;
     background: #6c63ff;
@@ -47,13 +47,12 @@ body {
     color: #6c63ff;
 }
 
-/* MAIN */
 .main {
     flex: 1;
     padding: 20px;
 }
 
-/* TOPBAR */
+
 .topbar {
     display: flex;
     justify-content: space-between;
@@ -83,7 +82,7 @@ body {
     cursor: pointer;
 }
 
-/* WELCOME */
+
 .welcome {
     background: #e6e4ff;
     padding: 20px;
@@ -91,7 +90,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* CARDS */
+
 .cards {
     display: flex;
     gap: 20px;
@@ -109,7 +108,7 @@ body {
     color: #6c63ff;
 }
 
-/* CHARTS */
+
 .charts {
     display: flex;
     gap: 20px;
@@ -137,7 +136,7 @@ body {
     margin: auto;
 }
 
-/* RIGHT PANEL */
+
 .right-panel {
     width: 250px;
     padding: 20px;
@@ -181,7 +180,7 @@ body {
     border-radius: 15px;
 }
 
-/* Default icon */
+
 .sidebar a {
   display: flex;
   justify-content: center;
@@ -193,21 +192,21 @@ body {
   transition: 0.3s;
 }
 
-/* ICON size */
+
 .sidebar svg {
   font-size: 20px;
 }
 
-/* Hover effect (SUBTLE, not white) */
+
 .sidebar a:hover {
   background: rgba(255, 255, 255, 0.2);
-  color: rgb(206, 24, 24); /* stays white */
+  color: rgb(206, 24, 24); 
 }
 
-/* ACTIVE state */
+
 .sidebar a.active {
   background: white;
-  color: #6c63ff; /* blue/purple */
+  color: #6c63ff; 
 }
 
 .patient-card {
@@ -230,7 +229,7 @@ body {
     opacity: 0.8;
 }
 
-/* Tabs */
+
 .tabs {
     margin: 15px 0;
 }
@@ -249,7 +248,7 @@ body {
     color: white;
 }
 
-/* Status badges */
+
 .status {
     padding: 5px 10px;
     border-radius: 20px;
@@ -267,14 +266,14 @@ body {
     color: #721c24;
 }
 
-/* Search */
+
 input[placeholder="Search patient..."] {
     padding: 10px;
     margin-bottom: 10px;
     width: 250px;
 }
 
-/* Patient Card */
+
 .patient-card {
     background: white;
     padding: 15px;
