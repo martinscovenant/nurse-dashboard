@@ -13,7 +13,6 @@ import {
 import { Line, Doughnut } from "react-chartjs-2";
 import { PatientContext } from "../context/PatientContext";
 
-// Register components
 ChartJS.register(
     LineElement,
     CategoryScale,
@@ -29,11 +28,9 @@ const Charts = () => {
     const { patients } = useContext(PatientContext);
     const [range, setRange] = useState("weekly");
 
-    // ✅ ACTIVE / DISCHARGED COUNTS
     const active = patients.filter(p => !p.discharged).length;
     const discharged = patients.filter(p => p.discharged).length;
 
-    // ✅ WEEKLY DATA
     const getWeeklyData = () => {
         const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         const counts = Array(7).fill(0);
@@ -48,7 +45,6 @@ const Charts = () => {
         return { labels: days, data: counts };
     };
 
-    // ✅ MONTHLY DATA
     const getMonthlyData = () => {
         const labels = ["Week 1", "Week 2", "Week 3", "Week 4"];
         const counts = [0, 0, 0, 0];
@@ -63,11 +59,9 @@ const Charts = () => {
         return { labels, data: counts };
     };
 
-    // ✅ SELECT DATA
     const chartSource =
         range === "weekly" ? getWeeklyData() : getMonthlyData();
 
-    // ✅ LINE DATA (DYNAMIC)
     const lineData = {
         labels: chartSource.labels,
         datasets: [
@@ -84,7 +78,6 @@ const Charts = () => {
         ]
     };
 
-    // ✅ LINE OPTIONS (TOOLTIP + ANIMATION)
     const lineOptions = {
         responsive: true,
         plugins: {
@@ -97,7 +90,6 @@ const Charts = () => {
         }
     };
 
-    // ✅ DOUGHNUT DATA
     const doughnutData = {
         labels: ["Active", "Discharged"],
         datasets: [
@@ -111,7 +103,6 @@ const Charts = () => {
     return (
         <div className="charts">
 
-            {/* FILTER BUTTONS */}
             <div className="chart-filter">
                 <button onClick={() => setRange("weekly")}>
                     Weekly
@@ -121,13 +112,11 @@ const Charts = () => {
                 </button>
             </div>
 
-            {/* LINE CHART */}
             <div className="chart-box">
                 <h4>Patient Growth ({range})</h4>
                 <Line data={lineData} options={lineOptions} />
             </div>
 
-            {/* DOUGHNUT */}
             <div className="chart-box">
                 <h4>Patient Status</h4>
                 <Doughnut data={doughnutData} />
