@@ -32,7 +32,6 @@ const Dashboard = () => {
 
             <div className="cards">
 
-                {/* DISCHARGED */}
                 <div
                     className="card clickable animated-card"
                     onClick={() => navigate("/patients?filter=discharged")}
@@ -46,7 +45,6 @@ const Dashboard = () => {
                     </small>
                 </div>
 
-                {/* ACTIVE */}
                 <div
                     className="card clickable animated-card"
                     onClick={() => navigate("/patients?filter=active")}
@@ -60,7 +58,6 @@ const Dashboard = () => {
                     </small>
                 </div>
 
-                {/* TOTAL */}
                 <div
                     className="card clickable animated-card"
                     onClick={() => navigate("/patients?filter=all")}
