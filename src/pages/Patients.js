@@ -22,9 +22,7 @@ const Patients = () => {
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
-    const filter = queryParams.get("filter");
-
-    // ✅ Sync tab with URL filter
+    const filter = queryParams.get("
     useEffect(() => {
         if (filter === "discharged") {
             setActiveTab("discharged");
@@ -46,19 +44,16 @@ const Patients = () => {
         setCondition("");
     };
 
-    // 🔍 SEARCH FIRST
     let displayPatients = patients.filter(p =>
         p.name.toLowerCase().includes(search.toLowerCase())
     );
 
-    // 🎯 FILTER LOGIC
     if (filter) {
         if (filter === "discharged") {
             displayPatients = displayPatients.filter(p => p.discharged);
         } else if (filter === "active") {
             displayPatients = displayPatients.filter(p => !p.discharged);
         } else if (filter === "all") {
-            // show everything
         }
     } else {
         if (activeTab === "active") {
@@ -72,7 +67,6 @@ const Patients = () => {
         <div>
             <h2>Patients</h2>
 
-            {/* FILTER INDICATOR */}
             {filter && (
                 <div className="filter-bar">
                     <span className="filter-label">
@@ -90,14 +84,12 @@ const Patients = () => {
                 </div>
             )}
 
-            {/* SEARCH */}
             <input
                 placeholder="Search patient..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />
 
-            {/* TABS */}
             <div className="tabs">
 
                 <button
@@ -122,7 +114,6 @@ const Patients = () => {
 
             </div>
 
-            {/* FORM */}
             <div className="form">
                 <input
                     placeholder="Name"
@@ -147,7 +138,6 @@ const Patients = () => {
                 </button>
             </div>
 
-            {/* LIST */}
             <div>
                 {displayPatients.length === 0 ? (
                     <p>No patients found</p>
@@ -159,12 +149,10 @@ const Patients = () => {
                             <p>Age: {p.age}</p>
                             <p>{p.condition}</p>
 
-                            {/* STATUS */}
                             <p className={p.discharged ? "status discharged" : "status active"}>
                                 {p.discharged ? "🔴 Discharged" : "🟢 Active"}
                             </p>
 
-                            {/* ACTIONS */}
                             <div className="actions">
 
                                 {!p.discharged ? (
