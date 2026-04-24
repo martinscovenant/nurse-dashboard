@@ -6,7 +6,6 @@ const Main = () => {
     return (
         <div className="main">
 
-            {/* Topbar */}
             <div className="topbar">
                 <div className="search-box">
                     <FaSearch />
@@ -18,13 +17,11 @@ const Main = () => {
                 </button>
             </div>
 
-            {/* Welcome */}
             <div className="welcome">
                 <h2>Welcome back 👋</h2>
                 <p>You’ve got 12 new updates today</p>
             </div>
 
-            {/* Cards */}
             <div className="cards">
 
                 <div className="card">
