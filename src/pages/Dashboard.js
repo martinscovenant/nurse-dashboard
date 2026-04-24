@@ -9,7 +9,6 @@ const Dashboard = () => {
 
     const { patients } = useContext(PatientContext);
     const navigate = useNavigate();
-    // Calculations
     const totalPatients = patients.length;
 
     const dischargedPatients = patients.filter(p => p.discharged).length;
