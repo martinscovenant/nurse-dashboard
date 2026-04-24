@@ -18,18 +18,15 @@ export const PatientProvider = ({ children }) => {
         );
     };
 
-    // Load from localStorage
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem("patients")) || [];
         setPatients(data);
     }, []);
 
-    // Save to localStorage
     useEffect(() => {
         localStorage.setItem("patients", JSON.stringify(patients));
     }, [patients]);
 
-    // ✅ Add Patient (FIXED WITH createdAt)
     const addPatient = (patient) => {
         const newPatient = {
             id: Date.now(),
@@ -42,7 +39,6 @@ export const PatientProvider = ({ children }) => {
         setPatients(prev => [...prev, newPatient]);
     };
 
-    // Discharge Patient
     const dischargePatient = (id) => {
         setPatients(prev =>
             prev.map(p =>
